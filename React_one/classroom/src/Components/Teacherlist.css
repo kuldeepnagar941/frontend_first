@@ -1,0 +1,41 @@
+.teacher-list-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .teacher-list-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .teacher-list-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    font-size: 16px;
+  }
+  
+  .teacher-list-table thead {
+    background-color: #f4f4f4;
+  }
+  
+  .teacher-list-table th,
+  .teacher-list-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .teacher-list-table th {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .teacher-list-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .teacher-list-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  

@@ -1,0 +1,24 @@
+* diffrence bitween usestate and Redux
+--- Use state is local scope where redux is global scope over the application.
+---Use state is Simple, isolated state where redux is Shared or complex state management.
+---Use state is easy to use where redox is More setup required.
+
+Key Differences Feature                   useState                               Redux
+	                                  	                        
+Scope	                                  Local (per component)	                 Global (application-wide)
+Use case	                          Simple, isolated state	         Shared or complex state management
+Ease of use	                          Easy	                                 More setup required
+Performance	                          Efficient for local state	         Better for larger, complex apps
+Setup Complexity	                  Minimal setup (no external library)	 Requires actions, reducers, store
+
+==================================================================================================================
+* diffrence bitween Redux and ReduxToolkit
+==================================================================================================================
+*State
+--- In React state refers to a special object that hold the data and information about a components.
+
+==================================================================================================================
+*Action
+*Payload
+*UseSelector
+*UseDispatch

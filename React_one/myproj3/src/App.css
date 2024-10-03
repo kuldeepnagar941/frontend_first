@@ -1,0 +1,304 @@
+*{
+  margin:0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+html{
+  font-size: 20px;
+  font-family: sans-serif;
+}
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.outer_box{
+  padding: 0px 50px;
+  padding-top: 50px;
+  width: 75%;
+  border-radius: 10px;
+  background-image: url("https://storage.needpix.com/rsynced_images/gradient-grey.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.inner_box{
+  background-color: white;
+  width: 99%;
+}
+.heading_box{
+  border-bottom: 1px solid rgb(231, 228, 228);
+  padding: 15px;
+  width: 90%;
+  margin-left: 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.heading_L{
+  width: 13%;
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+.dot {
+  height: 5px;
+  width: 5px;
+  background-color: red;
+  border-radius: 50%;
+  display: inline-block;
+}
+.heading_M{
+  width: 40%;
+}
+.heading_M ul{
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  font-size: 0.6rem;
+}
+.heading_R{
+  width: 20%;
+}
+.heading_R button{
+  background-color: white;
+  padding: 5% 10%;
+  font-weight: 700;
+}
+.main_box{
+  width: 100%;
+  display: flex;
+}
+.main_box_L{
+  width: 45%;
+  height: 90vh;   
+}
+.main_box_R{
+  width: 45%;
+  height: 90vh;
+  background-image: url("https://img.freepik.com/free-photo/businesswoman-rubbing-holding-hands-isolated-white-background_1258-104590.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1721952000&semt=ais_user");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.main_box_R1{
+  height: 30%;
+  padding: 20px;
+  font-size: 0.95rem;
+  padding-left: 25%;
+}
+.main_box_R1 span{
+  font-weight: 600;
+}
+.main_box_R2{
+  height: 13%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sketch{
+  padding: 7%;
+  width: 14%;
+  border-radius: 50%; 
+  background-image: url("https://cdn.icon-icons.com/icons2/2429/PNG/512/sketch_logo_icon_147238.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-left: 60%;
+}
+.main_box_R3{
+  height: 13%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.figma{
+  padding: 7%;
+  width: 14%;
+  border-radius: 50%; 
+  background-image: url("https://s3-alpha.figma.com/hub/file/2815952264/7a5ebfb0-0508-48ab-be9a-31b36ba53f97-cover.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-right: 60%;
+  border: 1px solid rgb(240, 236, 236);
+  
+}
+.main_box_R4{
+  height: 13%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.xd{
+  padding: 7%;
+  width: 14%;
+  border-radius: 50%; 
+  background-image: url("https://cdn.techjockey.com/web/assets/images/techjockey/products/3122_adobe-xd-cc-product.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-left: 70%;
+  border: 1px solid rgb(231, 230, 230);
+}
+.main_box_R5{
+  height: 30%;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main_box_R5 input{
+  padding: 4%;
+  width: 70%;
+  margin-top: 15%;
+}
+/* Leftbox */
+.main_box_L_top{
+  height: 70%;
+  margin-left: 16%;
+}
+.main_box_L_bot{
+  height: 24%;
+  background-color: black;
+  color: white;
+  display: flex;
+}
+/* left top box */
+.intro{
+  display: flex;
+  margin-top: 12%;
+}
+.intro_content{
+  width: 50%;
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+.intro_butn{
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+.ui_ux_btn{
+  padding: 5px;
+  width: 50%;
+  background-color: rgb(91, 91, 244);
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  color: white;
+  margin-left: 5%;
+  font-size: 0.9rem;
+}
+.intro_name{
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+.main_box_L_top p{
+  font-size: 0.6rem;
+  padding-top: 5%;
+  line-height: 18px;
+}
+.main_box_L_top p span{
+  font-size: 0.6rem;
+  font-weight: 600;
+}
+.hire_me_box{
+  margin-top: 5%;
+  display: flex;
+}
+.hire_me_box_L{
+  width: 50%;
+}
+.hire_me_box_R{
+  width: 50%;
+  padding: 10px;
+}
+.logo_icon{
+  height: 15vh;
+  width: 70%;
+  border-radius: 50%;
+}
+.logo_icon img{
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+.hire_me_box_L_top{
+  display: flex;
+  font-size: 0.6rem;
+}
+.hire_me_box_R_bot{
+  margin-top: 7%;
+}
+.hire_me_box_L_top button{
+  background-color: orangered;
+  border: none;
+  padding: 9px 25px;
+  color: white;
+}
+.hire_me_box_L_top h5{
+  margin-left: 10px;
+  margin-top: 6%;
+}
+.hire_me_box_R_bot h6{
+  font-size: 0.6rem;
+  font-weight: 500;
+  line-height: 15px;
+}
+.hire_me_box_R_bot h6 span{
+  font-size: 1rem;
+  font-weight: 700;
+}
+.contact_outer_box{
+  width: 100%;
+  display: flex;
+  font-size: 0.6rem;
+  margin-top: 5%;
+}
+.contact_outer_box_L{
+  width: 50%;
+}
+.contact_outer_box_R{
+  width: 50%;
+}
+.contact_outer_box_L span{
+  font-weight: 700;
+  font-size: 1rem;
+}
+.contact_outer_box_R span{
+  font-weight: 700;
+  font-size: 1rem;
+}
+.project_statistics{
+  width: 50%;
+  padding: 30px;
+}
+.design{
+  width: 50%;
+  padding: 30px;
+}
+.project_statistics{
+  font-size: 0.65rem;
+  font-weight: 700;
+  line-height: 15px;
+}
+.project_statistics button{
+  color: black;
+  background-color: rgb(255, 225, 0);
+  border: none;
+  padding: 10px;
+  margin-top: 10%;
+}
+.design1{
+  color: white;
+  font-size: 0.6rem;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 0.5px solid grey;
+  padding-bottom: 5%;
+  padding-top: 4%;
+}
