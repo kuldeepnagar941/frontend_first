@@ -1,0 +1,1523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGex Software</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+        .box1{
+            height: 5vh;
+            width: 100%;
+            /* border: 1px solid black; */
+            background-color: rgb(2, 3, 129);
+            display: flex;
+        }
+        .box1innerA{
+            height: 100%;
+            width: 30%;
+            /* border: 1px solid black; */
+            color: white;
+            display: flex;
+            align-items: center;
+           
+        }
+        .box1innerA p{
+            margin-left: 7%;
+
+        }
+        .box1innerB{
+            height: 100%;
+            width: 35%;
+            /* border: 1px solid black; */
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+        .box1innerC{
+            height: 100%;
+            width: 35%;
+            /* border: 1px solid black; */
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        .box1innerC i{
+            margin: 1%;
+        }
+        .box2{
+            height: 15vh;
+            width: 100%;
+            /* border: 1px solid black; */
+            display: flex;
+        }
+        .box2innerA{
+            height: 100%;
+            width: 15%;
+            /* border: 1px solid black; */
+        }
+        .box2innerB{
+            height: 100%;
+            width: 85%;
+            /* border: 1px solid black; */
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            
+        }
+        .box2innerC{
+            display: none;
+        }
+        .box2innerB a{
+            font-size: large;
+            font-family: sans-serif;
+            text-decoration:none ;
+            /* color: blue; */
+            font-weight: 500;
+
+        }
+        .box3{
+            height: 80vh;
+            /* width: 100%; */
+            border: 1px solid black;
+            /* display: flex; */
+            background-image: url(group\ photo.jpg);
+            background-repeat: no-repeat;
+            /* background-position: auto; */
+            background-size: cover;
+            background-position: center;    
+            
+        }
+        .box3innerA{
+            height: 50%;
+            width: 100%;
+            /* border: 1px solid black; */
+            display: flex;
+            justify-content: center;
+            align-items: end;
+            color: white;
+        }
+        .box3innerA h1{
+            font-family: sans-serif;
+            font-size: 70px;
+            font-weight: 700;
+        }
+        .box3innerB{
+            height: 50%;
+            width: 100%;
+            /* border: 1px solid black; */
+            display: flex;
+            justify-content: start;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+        }
+        .box3innerB h1{
+            font-family: sans-serif;
+            font-size: 55px;
+            /* font-weight: 600; */
+        }
+        .box3innerB h2{
+            font-family: sans-serif;
+            font-size: 45px;
+            /* font-weight: 600; */
+        }
+        .box4big{
+            height: 35vh;
+            width: 100%;
+            /* border: 1px solid black; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box4{
+            height: 65%;
+            width: 80%;
+            /* border: 1px solid black; */
+            display: flex;
+            display: flex;
+            justify-content: space-between;
+            background-color:rgb(2, 3, 129);
+            color: white;
+            font-family: sans-serif;
+        }
+        .box4innerA{
+            border-right: 2px solid white;
+            padding: 10px;
+            margin: 3px 0px;
+        }
+        .box4innerA p{
+            margin-top: 10px;
+            font-size: large;
+        }
+       
+        .box4innerB{
+            /* border: 1px solid black; */
+            padding: 10px;
+            
+        }
+        .box4innerB img{
+            height: 100px;
+            width: 100px; 
+            margin-left: 35px;
+
+        }
+        .box4innerC{
+            /* border: 1px solid black; */
+            padding: 10px;
+            
+        } 
+        .box4innerC img{
+            height: 100px;
+            width: 100px; 
+            margin-left: 25px;
+
+        }
+        .box4innerD{
+            /* border: 1px solid black; */
+            padding: 10px;
+        }
+        .box4innerD img{
+            height: 100px;
+            width: 100px; 
+            margin-left: 25px;
+
+        }
+
+
+        .box5big{
+            /* border: 2px solid black; */
+            padding: 10px;
+            display: flex;
+            justify-content:center ;
+        }
+        .box5A{
+            /* border: 2px solid black; */
+            padding: 10px;  
+            /* width: 48vw; */
+            margin: 10px;
+            box-shadow: 0px 0px 5px black;
+            margin-left: 10%;
+        }
+        .box5A img{
+            width: 100%;
+        }
+        .box5B{
+            /* border: 2px solid black; */
+            padding: 10px;
+            width: 48vw;
+            display: flex;
+            justify-content: center;
+            /* align-items: center; */
+            flex-direction: column;
+            font-family: sans-serif;
+            margin-left: 1%;
+        }
+        .box5B h2{
+            font-size: 18px;
+            font-weight: 400;
+            color:  rgb(73, 73, 73);
+
+        }
+        .box5B h1{
+            line-height: 2;
+            color: rgb(2, 3, 129);
+            font-size: 40px;
+        }
+        .box5B p{
+            line-height: 1.5;
+            color: rgb(73, 73, 73);
+        }
+        .box5B button{
+            padding: 10px;
+            width: 20%;
+            background-color:rgb(2, 3, 129);
+            color: white;
+            border: none;
+            margin-top: 3%;
+            border-radius: 6px;
+        }
+        .box6big{
+            border: 3px solid white;
+            display: flex;
+            justify-content: space-evenly;
+            background-color:rgb(2, 3, 129); ;
+
+        }
+        .box6innerA{
+            /* border: 1px solid black; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            font-family: sans-serif;
+            /* padding: 3%; */
+            
+        }
+        .box6innerA h1{
+            line-height: 3;
+            color: white;
+            font-size: 34px;
+            
+        }
+        .box6innerA p{
+            line-height: 1.5;
+            color: white;
+        }
+        .box6innerA button{
+            height: 40px;
+            width: 200px;
+            font-size: large;
+            border-radius: 5px;
+            border:1px solid wheat;
+        }
+        .box6innerAinner{
+            display: flex;
+            justify-content: space-between;
+            width: 45vw;
+            margin-top: 2%;
+        }
+        .box6innerB{
+            /* border: 1px solid black; */
+            padding: 2%;
+            
+        }
+        .box6innerB img{
+            height: 300px;
+        }
+        .box7{
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            padding-top: 2%;
+            color: rgb(2, 3, 129);
+            flex-direction: column;
+            align-items: center;
+            background-color: #F6F6F6;
+
+        }
+        .box7 hr{
+            width: 9%;
+            color:rgb(2, 3, 129) ;
+            margin-top: .5%;
+            height: 5px;
+            background-color: rgb(2, 3, 129);
+            border-radius: 5px;
+        }
+        .box8big{
+            background-color: #F6F6F6;
+            padding: 3%;
+        }
+        .box8{
+            /* border: 1px solid black; */
+            /* height: 20vh; */
+            width: 85%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        .box8innerA{
+            border:double;
+            border-radius: 5px;
+            width: 18vw;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            font-family: sans-serif;
+            padding: 1%;
+           
+        }
+        .box8innerA h3{
+            line-height: 2;
+            color:rgb(2, 3, 129) ;
+            
+        }
+        .box8innerA p{
+            line-height: 1.5;
+            margin: 1%;
+            color: grey;
+
+        }
+
+        .box8innerA img{
+            /* border: 1px solid black; */
+            height: 100px;
+            width: 100px;
+            margin: auto;
+            padding: auto;
+            border-radius: 100%;
+            
+        }
+        .box9big{
+            width: 100vw;
+            /* border: 1px solid black; */
+            display: flex;
+            margin: auto;
+            justify-content: space-evenly;
+            padding: 4%;
+        }
+        .box9A{
+            /* border: 1px solid black; */
+            width: 30%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            padding: 70px 0px;
+            position: relative;
+        }
+        .box9A h1{
+            font-family: sans-serif;
+            font-size: 70px;
+            color: gray;
+            font-weight: 100;
+        }
+        .box9A h5{
+            font-family: sans-serif;
+            color: gray;
+        }
+        .box9A h2{
+            font-family: sans-serif;
+            line-height: 2;
+            font-size: 30px;
+            color:rgb(2, 3, 129) ;
+        }
+        .h{
+
+            position: absolute;
+            left: 46px;
+            top:120px;
+        }
+        .box9A p{
+            font-family: sans-serif;
+            line-height: 1.5;
+        }
+        .box9A button{
+            padding: 2%;
+            width: 40%;
+            margin-top: 3%;
+            background-color: white;
+            color:rgb(2, 3, 129) ;
+            font-family: sans-serif;
+            border: 1px solid black;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+
+        .box9B{
+            /* border: 1px solid black; */
+            width: 48%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .box9BinnerA{
+            border:  solid  #242D6F;
+            border-width: 0px 0px 5px 0px;
+            width: 48%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: sans-serif;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+            
+        }
+        .box9BinnerA i{
+            margin: 0px;
+            
+            font-size: 30px;
+            color: black;
+        }
+        .box9BinnerA h3{
+            font-weight: 500;
+            color:rgb(2, 3, 129) ;
+            line-height: 2.5;
+        }
+        .box9BinnerA p{
+            font-family: sans-serif;
+            margin: 0% 5%;
+            line-height: 1.5;
+        }
+        .box10big{
+            border: 1px solid black;
+            padding: 60px;
+            background-color: #242D6F;
+            opacity: 0.9;
+            position: absolute;
+        }
+        .box10A{
+            /* border: 1px solid black; */
+            text-align: center;
+            font-family: sans-serif;
+            padding: 10px;
+            color: white;
+            font-size: 20px;
+        }
+        .box10B{
+            /* border: 1px solid black; */
+            margin: 0px 100px;
+            text-align: center;
+            font-family: sans-serif;
+            padding: 10px;
+            color: white;
+            font-size: 20px;
+        }
+        .box10C{
+            /* border: 1px solid black; */
+            text-align: center;
+            padding: 10px;
+        }
+        .box10C button{
+            padding: 10px 40px;
+            background-color: white;
+            font-weight: 600;
+            border: none;
+            border-radius: 6px;
+        }
+        .box11big{
+            width: 100vw;
+            /* border:  1px solid black; */
+            position: relative;
+            margin-top: 20%;
+            display: flex;
+           
+
+        }
+        .box11A{
+            /* height: 100%; */
+            width: 28vw;
+            /* border:  1px solid black; */
+            background-color: black;
+            opacity: .75;
+            color: white;
+            padding: 1%;
+            margin-left: 6%;
+            
+        }
+        .box11A h1{
+            font-family: sans-serif;
+            line-height: 2;
+            margin-left: 18%;
+        }
+        .box11A hr{
+            width: 55%;
+            margin-left: 18%;
+        }
+        .box11A i{
+            /* margin-right: 10%; */
+            color: white;
+        }
+        .box11A h2{
+            font-family: sans-serif;
+            line-height: 2.5;
+            margin-left: 18%;
+        }
+        .box11A p{
+            font-family: sans-serif;
+            line-height: 1.5;
+            margin: 0% 5%;
+            margin-left: 18%;
+        }
+        .box11B{
+            width: 50vw;
+            /* border: 1px solid red; */
+            display: flex;
+            justify-content: end;
+            align-items: center;
+        }
+        .box11Binner{
+            width: 95%;
+            /* border: 1px solid black; */
+        }
+        .box11Binner h1{
+            font-family: sans-serif;
+            line-height: 2.5;
+            color: #242D6F;
+            font-size: 35px;
+        }
+        .box11Binner h6{
+            font-style: italic;
+            line-height: 1.2;
+            font-size: medium;
+            font-weight: 500;
+            font-family: "Open Sans", Sans-serif;
+            color: #575757;
+            letter-spacing: 0.5px;
+        }
+        .box11Binner h2{
+            font-family: sans-serif;
+            line-height: 2;
+            color: #242D6F;
+        }
+        .box11Binner p{
+            font-family: sans-serif;
+            line-height: 1.5;
+        }
+        .box11Binner button{
+            font-family: sans-serif;
+            line-height: 2.5;
+            width: 30%;
+            background-color: #242D6F;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-top: 4%;
+        }
+        .box12big{
+            /* border: 1px solid black; */
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            padding-bottom: 3%;
+        }
+        .box12{
+            /* border: 1px solid black; */
+            width: 88%;
+            display: flex;
+            background-color: #242D6F;
+        }
+        .box12inner{
+            width: 20%;
+            /* border: 1px solid black ; */
+            padding: 3.5% 0%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: white;
+        }
+        .box12inner h1{
+            font-family: sans-serif;
+            font-size: 50px;
+            font-weight: 500;
+        }
+        .box12inner h3{
+            font-family: sans-serif;
+            font-size: 20px;
+            font-weight: 500;
+        }
+        .box13big{
+            /* border: 1px solid black; */
+            width: 100vw;
+            background-color: #F6F6F6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5%;
+        }
+        .box13{
+            /* border: 1px solid black; */
+            display: flex;
+            
+            /* margin: auto; */
+            width: 96%;
+        }
+        .box13inner{
+            /* border: 1px solid black; */
+            font-family: sans-serif;
+            width: 50%;
+        }
+         .box13inner h3{
+            color: gray;
+            line-height: 2;
+            font-weight: 400;
+            font-size: 25px;
+            margin-top: 5%;
+        }
+        .box13inner h1{
+            color: #242D6F;
+            line-height: 2;
+            font-size: 45px;
+        }
+        .box13inner p{
+            color: gray;
+            line-height: 1.5;
+            font-size: 18px;
+        }
+        .box13inner button{
+            padding: 1.3%;
+            width: 35%;
+            font-size: large;
+            background-color: #242D6F;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-top: 4%;
+        }
+        .box13inner img{
+            width: 600px;
+            height: 450px;
+        }
+        .box14big{
+            width: 100vw;
+            /* border: 1px solid black; */
+            padding:  4% 6%;
+        }
+
+        
+        .box14{
+            /* border: 1px solid black; */
+            display: flex;
+           
+        }
+        .box14innerA{
+            /* border: 1px solid black; */
+            font-family: sans-serif;
+            margin-left: 50px;
+            
+        }
+        .box14innerB{
+            /* border: 1px solid black; */
+            font-family: sans-serif;
+            margin-left: 30px;
+            
+        }
+        .box14innerB img{
+            width: 300px;
+            height: 300px;
+            border-radius: 250px;
+            margin-top: 60px;
+        }
+        .box14innerA h3{
+    
+            line-height: 2;
+            font-size: 25px;
+           
+        }
+        .box14innerA h1{
+            color: #242D6F;
+            line-height: 1.5;
+            font-size: 45px;
+        }
+        .box14innerA p{
+            
+            line-height: 1.5;
+            font-size: 18px;
+            text-align: justify;
+            letter-spacing: 1px;
+        }
+        .box14innerA h4{
+            color: #242D6F;
+            line-height: 2.5;
+            font-size: px;
+        }
+        .box14innerA button{
+            padding: 1.3%;
+            width: 25%;
+            font-size: large;
+            background-color: #242D6F;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-top: 2%;
+        } 
+        .box16big{
+            /* border: 1px solid black; */
+            background-color: white;
+        } 
+        .box16A{
+            /* border: 1px solid black; */
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            padding: 0% 4%;
+        }
+        .box16A h1{
+            font-family: sans-serif;
+            color: #242D6F;
+            font-size: 35px;
+        }
+        .box16A button{
+            width: 13%;
+            padding: 0.8%;
+            background-color: #242D6F;
+            color: white;
+            font-size: large;
+            border-radius: 2px;
+            border: none;
+        }
+        .box16B{
+            /* border: 1px solid black; */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 2% 0%;
+        } 
+        .box16Binner{
+            /* border: 1px solid black; */
+            background-color: white;   
+        } 
+        .box16Binner img{
+            width: 308px;
+            height: 200px;
+            padding: 3px;
+        }
+        .box17big{
+            /* border: 1px solid black; */
+            background-color: #f7f6f6ea;
+            padding: 30px 0px;
+        }
+        .box17A{
+            /* border:  1px solid black; */
+            display: flex;
+            justify-content: center;
+            padding: 1%;
+            font-family: sans-serif;
+            font-size: 18px;
+            color: #242D6F;
+            flex-direction: column;
+            align-items: center;
+        }
+        .box17B{
+            /* border: 1px solid black; */
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .box17Binner{
+            /* border: 1px solid black; */
+            font-family: sans-serif;
+        }
+        .box17Binnerimg{
+            /* border: 1px solid black; */
+            margin: 0%;
+        }
+        .box17Binnerimg img{
+            border-radius: 500px;
+        }
+        .box17Binnertext{
+            /* border: 1px solid black; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: sans-serif;
+            line-height: 1.5;
+            font-size: larger;
+            
+        }
+        .box17Binnertext h3{
+            color: #242D6F;
+        }
+        .box18big{
+            /* border: 1px solid black; */
+            padding: 50px 90px;
+        }
+        .box18{
+            /* border:  1px solid black; */
+            display: flex;
+            width: 80vw;
+            background-color: #f7f6f6ea;;
+        }
+        .box18imgbox{
+            /* border: 1px solid black; */
+            font-family: sans-serif;
+            color: #242D6F;
+            width: 50%;
+        }
+        .box18imgbox img{
+            width: 500px;
+            height: 670px;
+        }
+        .box18imgbox h1{
+            margin-left: 10px;
+        }
+        .box18formbox{
+            /* border: 1px solid black; */
+            width: 50%;
+
+        }
+        .forum{
+  
+    background-color: rgb(36, 45, 111);
+    padding: 40px 10px;
+    
+}
+.nameDIV{
+    color: white;
+    font-size: 1.2rem;
+    margin: 10px 0px;
+}
+.inputt{
+    height: 2rem;
+    outline: none;
+    border: none;
+    border-radius: 2px;
+    width: 48%;
+    margin: 2px 2px;
+}
+
+.contactDIV{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+
+.emailDIV{
+    width: 50%;
+    color: white;
+    font-size: 1.2rem;
+    margin: 20px 0px;
+
+}
+.phnDIV{
+    width: 50%;
+    color: white;
+    font-size: 1.2rem;
+    margin: 20px 0px;
+}
+.inputtt{
+    width: 97%;
+    height: 2rem;
+    outline: none;
+    border: none;
+    border-radius: 2px;
+    margin: 2px 2px;
+}
+
+.query{
+    
+    width: 100%;
+    color: white;
+    font-size: 1.2rem;
+    margin: 20px 0px;  
+
+}
+textarea{
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    height: 250px;
+    min-height: 200px;
+    max-height: 400px;
+    padding: 10px;
+
+}
+.submitBTN{
+    width: 100px;
+    height: 35px;
+    color: rgb(36, 45, 111);
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 2px;
+    margin: 20px 0px;
+}
+.allLinks{
+    background-color: rgb(88, 88, 88);
+    padding: 20px 20px;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+/* link 1 */
+.links1{
+    width: 20%;
+}
+
+.linkLogo{
+    height: 60px;
+    width: 200px;
+    background-image: url(https://www.regexsoftware.com/wp-content/uploads/2020/02/whatsapp-dp-1-e1590747617997.png);
+    background-repeat: no-repeat;
+    background-size: 70%;
+}
+.linkPara{
+    margin: 10px 5px;
+    font-size: 1rem;
+    color: white;
+    line-height: 1.8;
+    word-spacing: 2px;
+    padding: 0px 15px 0px 0px;
+}
+
+/* quick Links 2 */
+.links2{
+    width: 15%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+}
+.quickLinkHEADING{
+    color: white;
+    font-size: 1.5rem;
+}
+.quickLinkHEADING::after{
+    content: "";
+    width: 70%;
+    border: 2px dotted white;
+    position: absolute;
+    top: 40px;
+    left: 15%;
+}
+.quickLinks{
+    margin: 30px 0px 10px 0px;
+}
+.quickLinks:nth-child(n){
+    color: white;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+
+/* link - 3 */
+.links3{
+    width: 45%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+}
+.whatWeOfferHEADING{
+    color: white;
+    font-size: 1.5rem;
+}
+.whatWeOfferHEADING::after{
+    content: "";
+    width: 70%;
+    border: 2px dotted white;
+    position: absolute;
+    top: 40px;
+    left: 15%;
+}
+.link3Links{
+    /* div of two links right and left */
+
+    width: 90%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    padding: 10px 10px;
+}
+
+.linkPart1,.linkPart2{
+    margin: 0px 10px;
+    width: 50%;
+    color: white;
+    
+}
+
+.LquickLink:nth-child(n),.RquickLink:nth-child(n){
+    margin: 15px 0px;
+    line-height: 1.5;
+
+}
+
+/* Link - 4 */
+.links4{
+    width: 20%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+}
+.addressHEADING{
+    height: 50px;
+    color: white;
+    font-size: 1.5rem;
+}
+.addressHEADING::after{
+    content: "";
+    width: 70%;
+    border: 2px dotted white;
+    position: absolute;
+    top: 40px;
+    left: 15%;
+}
+.addressLinks{
+    height: 60%;
+    width: 85%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    padding: 10px;
+    color: white;
+    margin: 0px 0px 50% 0px;
+}   
+
+@media(max-width:375px)
+{
+   .box1,.box2 a{
+    display: none;
+   }
+   .box2innerC{
+            display: block;
+    }
+    
+}
+
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box1innerA">
+            <p><i class="fa-solid fa-phone"></i> +91-8890679895, +91-8890679895, +91-8890679895</p>
+        </div>
+        <div class="box1innerB">
+            <p><i class="fa-regular fa-envelope"></i> info@regexsoftware.com</p>
+        </div>
+        <div class="box1innerC">
+            <i class="fa-brands fa-linkedin"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-telegram"></i>
+            <i class="fa-brands fa-facebook"></i>
+        </div>
+    </div>
+    <div class="box2">
+        <div class="box2innerA"></div>
+        <div class="box2innerB">
+            <a href="">Home</a>
+            <a href="">About Us</a>
+            <a href="">Software Service</a>
+            <a href="">Training Service</a>
+            <a href="">Our Placement</a>
+            <a href="">Programs</a>
+            <a href="">Event</a>
+            <a href="">Pricing</a>
+            <a href="">Contact Us</a>
+        </div>
+        <div class="box2innerC">
+            <H1>==</H1>
+        </div>
+    </div>
+    <div class="box3">
+        <div class="box3innerA">
+            <h1>REGex Software</h1>
+        </div>
+        <div class="box3innerB">
+            <h1>Software & Ed-Tech Company</h1>
+            <h2>(Learn to Create)</h2>
+        </div>
+    </div>
+    <div class="box4big">
+        <div class="box4">
+            <div class="box4innerA">
+            <h1>Our Goal</h1>
+            <p>Our program aims to develop the <br>skills of every student</p>
+            </div>
+            <div class="box4innerB">
+                <img  src="bulb image.png" alt="">
+                <h3>Creative Thinking</h3>
+            </div>
+            <div class="box4innerC">
+                <img  src="career img.png" alt="">
+                <h3>Career Plaining</h3>
+            </div>
+            <div class="box4innerD">
+                <img src="two-people-debate_img.png" alt="">
+                <h3>Public Speaker</h3>
+            </div>
+        </div>
+    </div>
+    <div class="box5big">
+        <div class="box5A">
+            <img src="New-Project-65.webp" alt="">
+        </div>
+        <div class="box5B">
+            <h2  >About REGex Software</h2>
+            <h1>What We Do?</h1>
+            <p>Our team consists of passionate experts from various technology fields,<br> working together with the goal of closing the gap between industry and <br> academics. Through our training services, we strive to provide the best <br> software solutions to ensure client satisfaction.</p>
+            <button>CLICK HERE</button>
+        </div>
+    </div>
+    <div class="box6big">
+        <div class="box6innerA">
+            <h1>Welcome to REGex Software Services  </h1>
+            <p>REGex Software Services aims to provide an additional advantage to the field of <br> information technology. We are a team of passionate, skilled, and energetic individuals <br> collaborating to offer top-notch services. With offices located in Jaipur and Pune, we <br>strive to transform your ideas into tangible results. Our brand represents a fusion of <br> expertise, innovation and contemporary knowledge.</p>
+            <div class="box6innerAinner"> <button>SOFTWARE SERVICES</button><BUtton style=" background-color:rgb(2, 3, 129) ; color: white;">TRAINING SERVICES</BUtton>    
+            </div>
+        </div>
+        <div class="box6innerB">
+            <img src="our services.png" alt="">
+        </div>
+    </div>
+    <div class="box7">
+        <h1>Why Choose Us</h1>
+        <hr>
+    </div>
+    <div class="box8big">
+        <div class="box8">
+            <div class="box8innerA">
+                <img src="live-session.jpg" alt="">
+                <h3>Live Session</h3>
+                <p>Live Sessions by Expertise Trainers  and Access of Recorded Session is  also available.</p>
+            </div>
+            <div class="box8innerA">
+                <img src="liveproject.png" alt="">
+                <h3>Live Project</h3>
+                <p>Get a chance to work on Industry Oriented Projects to implement your learning.</p>
+            </div>
+            <div class="box8innerA">
+                <img src="support.png" alt="">
+                <h3>24*7 Support</h3>
+                <p>24*7 Mentorship Support available for all Students to clear all of your doubts.</p>
+            </div>
+            <div class="box8innerA">
+                <img src="opportunities.png" alt="">
+                <h3>Opportunities</h3>
+                <p>REGex provides Internship / Job opportunities to the best Students in different Companies</p>
+            </div>
+        </div>
+    </div>
+    <div class="box9big">
+        <div class="box9A">
+            <h1>5<h5 class="h">Years of Experiance</h5></h1>
+            <h2>Our Mission</h2>
+            <p>We are also open to take projects on website designing, android and iOS app development and many more. We strongly believe that business grows by supporting each other, that's why we are keenly searching for different start-ups to collaborate with us so that we can support and grow with them.</p>
+            <button>KNOW MORE !</button>
+
+        </div>
+        <div class="box9B">
+            <div class="box9BinnerA">
+                <i class="fa-solid fa-laptop"></i>
+                <h3>NEW TECHNOLOGIES</h3>
+                <p>We see technology moving much faster than any enterprise, it’s our goal to make sure our students are well aware and skilled.</p>
+            </div>
+            <div class="box9BinnerA">
+                <i class="fa-solid fa-pen"></i>
+                <h3>TRAINING</h3>
+                <p>We provide training in multiple technical skills like Linux, python, cloud computing and competitive programming in python, java, C and many More.</p>
+            </div>
+            <div style="margin-top: 14px;" class="box9BinnerA">
+                <i class="fa-solid fa-gear"></i>
+                <h3>NEW SKILLS</h3>
+                <p>Our Main Goal is To develop skills to our students so that they can achieve their dream Job in MNCs.</p>
+            </div>
+            <div style="margin-top: 14px;" class="box9BinnerA">
+                <i class="fa-solid fa-gears"></i>
+                <h3>BEST SERVICE</h3>
+                <p>We are always willing to work on a variety of technical tasks including Site design and development.</p>
+            </div>
+        </div>
+    </div>
+    <div class="box10big">
+        <div class="box10A">
+            <h1>Know More About Our Batches</h1>
+        </div>
+        <div class="box10B">
+            <p>Our batches are carefully curated to provide comprehensive and focused training in web development, Android and iOS app development and other digital skills. Each batch is designed to ensure hands-on learning, practical application and a supportive environment for growth. Join our batches and unlock your potential in the world of digital innovation.</p>
+        </div>
+        <div class="box10C">
+            <button>OUR BATCHES</button>
+        </div>
+    </div>
+   <div class="box11big">
+     <div class="box11A">
+        <h1>Our Services</h1>
+        <hr>
+        <h2>Experties</h2>
+        <p>We pride ourselves on having a highly skilled team of software developers who possess extensive expertise and experience in various domains and technologies</p>
+        <h2>QUALITY ASSURANCE</h2>
+        <p>Our dedicated quality assurance team conducts rigorous testing at every stage of the development process to ensure that the software is robust, secure, and free.</p>
+        <h2>CUSTOMIZED SOLUTION</h2>
+        <p>We understand that every business has unique needs and challenges. That’s why we focus on developing tailor-made software solutions that are designed to address your specific business objectives.</p>
+        </div>
+        <div class="box11B">
+            <div class="box11Binner">
+                <h1>What We Offer</h1>
+                <h6>” We see technology moving much faster than any enterprise, it’s our goal to make sure our students are well aware and skilled.”</h6>
+                <h2>Software Services</h2>
+                <p>We are always open to work on all sorts of technical projects like web designing anddevelopment,designing responsive application for android as well as iOS, web hosting ad maintenance digital marketing, content writing and many more.</p>
+                <button>VIEW OUR SERVICES</button>
+            </div>
+        </div>
+    </div>
+    <div class="box12big">
+        <div class="box12">
+            <div class="box12inner">
+                <h1>100+</h1>
+                <h3>Mentor's</h3>
+            </div>
+            <div class="box12inner">
+                <h1>35+</h1>
+                <h3>Total Project Done</h3>
+            </div>
+            <div class="box12inner">
+                <h1>NO</h1>
+                <h3>Student Impacted</h3>
+            </div>
+            <div class="box12inner">
+                <h1>25+</h1>
+                <h3>Courses</h3>
+            </div>
+            <div class="box12inner">
+                <h1>5</h1>
+                <h3>Cities</h3>
+            </div>
+        </div>
+    </div>
+    <div class="box13big">
+        <div class="box13">
+            <div class="box13inner">
+                <h3>About Training</h3>
+                <h1>Training Services</h1>
+                <p>Delivering quality training to tech geeks is our most prominent business <br> model. We provide training in multiple technical skills such as Linux, <br> python related tech (Django, flask, bigdata, ML), cloud computing (AWS <br> &  Azure) and competitive programming in python, java, C and C++.</p>
+                <button>VIEW OUR TRAINING</button>
+            </div>
+            <div class="box13inner">
+                <img src="sassion img" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="box14big">
+        <div class="box14">
+            <div class="box14innerB">
+            <img src="shivam sir img.jpeg" alt="">
+            </div>
+            <div class="box14innerA">
+                <h1>Shivam Maheshwari</h1>
+                <h3>CO-FOUNDER & CEO</h3>
+                <p>Shivam Maheshwari, the Co-Founder & CEO of REGex Software Services, is a young entrepreneur and corporate trainer with 6 years of experience. He specializes in various domains and manages the entire venture. REGex Software Services handles a wide range of technical projects, including web development, app design, digital marketing, and more. Shivam’s guidance has led many students to secure placements in renowned companies like Goldman Sachs, Amazon, Microsoft, and others, thanks to the company’s focus on Competitive Programming and high placement ratio in top MNCs.</p>
+                <h4>” The Key of REGex Software is Competitive Programming and placement ratio in Big MNCs. “</h4>
+                <button>KNOW MORE</button>
+            </div>
+        </div>
+    </div>
+    <div class="box16big">
+        <div class="box16A">
+            <h1>Event Gallery</h1>
+            <p>----------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+            <button>VIEW MORE >></button>
+        </div>
+        <div class="box16B">
+            <div class="box16Binner"><img src="gallery img 1.jpeg" alt=""></div>
+            <div class="box16Binner"><img src="gallery img 1.jpeg" alt=""></div>
+            <div class="box16Binner"><img src="gallery img 1.jpeg" alt=""></div>
+            <div class="box16Binner"><img src="gallery img 1.jpeg" alt=""></div>
+            <div class="box16Binner"><img src="gallery img 1.jpeg" alt=""></div>
+            <div class="box16Binner"><img src="gallery img 1.jpeg" alt=""></div>
+            <div class="box16Binner"><img src="gallery img 1.jpeg" alt=""></div>
+            <div class="box16Binner"><img src="gallery img 1.jpeg" alt=""></div>
+            <div class="box16Binner"><img src="gallery img 1.jpeg" alt=""></div>
+            <div class="box16Binner"><img src="gallery img 1.jpeg" alt=""></div>
+            <div class="box16Binner"><img src="gallery img 1.jpeg" alt=""></div>
+            <div class="box16Binner"><img src="gallery img 1.jpeg" alt=""></div>
+        </div>
+    </div>
+    <div class="box17big">
+        <div class="box17A">
+            <h1>Placed Student </h1>
+            <p>===============================</p>
+        </div>
+        <div class="box17B">
+            <div class="box17Binner">
+                <div class="box17Binnerimg">
+                    <img src="dipali.webp" alt="">
+                </div>
+                <div class="box17Binnertext">
+                    <p>Dipali Sharma</p>
+                    <h3>Wipro</h3>
+                </div>
+            </div>
+            <div class="box17Binner">
+                <div class="box17Binnerimg">
+                    <img src="divyanshi jain.webp" alt="">
+                </div>
+                <div class="box17Binnertext">
+                    <p>Divyanshi jain</p>
+                    <h3>wipro</h3>
+                </div>
+            </div>
+            <div class="box17Binner">
+                <div class="box17Binnerimg">
+                    <img src="gunjan saini.webp" alt="">
+                </div>
+                <div class="box17Binnertext">
+                    <p>Gunjan Saini</p>
+                    <h3>Wipro</h3>
+                </div>
+            </div>
+            <div class="box17Binner">
+                <div class="box17Binnerimg">
+                    <img src="muskan.webp" alt="">
+                </div>
+                <div class="box17Binnertext">
+                    <p>Muskan Khan</p>
+                    <h3>Wipro</h3>
+                </div>
+            </div>
+            <div class="box17Binner">
+                <div class="box17Binnerimg">
+                    <img src="riya khan.webp" alt="">
+                </div>
+                <div class="box17Binnertext">
+                    <p>Riya Khan</p>
+                    <h3>Wipro</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="box18big">
+    <div class="box18">
+        <div class="box18imgbox">
+            <h1>Get In Touch With Us...</h1>
+            <img src="img18.png" alt="">
+        </div>
+        <div class="box18formbox">
+            <div class="forum">
+                <div class="nameDIV">
+                    <label for="">Name</label><br>
+                    <input class="inputt" type="text" name="" id="">
+                    <input class="inputt" type="text" name="" id="">
+                </div>
+                <div class="contactDIV">
+                    <div class="emailDIV">
+                        <label for="">Email</label><br>
+                        <input class="inputtt" type="email" name="" id="">
+                    </div>
+                    <div class="phnDIV">
+                        <label for="">Phone</label><br>
+                        <input class="inputtt" type="number" name="" id="">
+                    </div>
+
+                </div>
+                <div class="query">
+                    <label for="">Query</label><br>
+                    <textarea name="" id="" cols="30" rows="10"></textarea>
+
+                    <button class="submitBTN">SUBMIT</button>
+                </div>
+            </div>
+         </div>
+        </div>
+    </div>
+</div>
+<div class="allLinks">
+    <div class="links1">
+        <div class="linkLogo"></div>
+        <div class="linkPara">Our team is made up of highly dedicated professionals from many technological fields. Our main objective is to bridge the knowledge gap between business and academics via our training services.</div>
+    </div>
+    <!-- quick links -->
+    <div class="links2">
+        <div class="quickLinkHEADING">Quick Links</div>
+        <div class="quickLinks">
+            <div class="quickLink1">
+                <i class="fa-solid fa-angles-right"></i>
+                Home
+            </div>
+            <div class="quickLink2">
+                <i class="fa-solid fa-angles-right"></i>
+                About Us
+            </div>
+            <div class="quickLink3">
+                <i class="fa-solid fa-angles-right"></i>
+                Training Services
+            </div>
+            <div class="quickLink4">
+                <i class="fa-solid fa-angles-right"></i>
+                Programs
+            </div>
+            <div class="quickLink5">
+                <i class="fa-solid fa-angles-right"></i>
+                Events
+            </div>
+            <div class="quickLink6">
+                <i class="fa-solid fa-angles-right"></i>
+                Contact Us
+            </div>
+            <div class="quickLink7">
+                <i class="fa-solid fa-angles-right"></i>
+                Software Services
+            </div>
+            <div class="quickLink8">
+                <i class="fa-solid fa-angles-right"></i>
+                Our Placements
+            </div>
+            <div class="quickLink9">
+                <i class="fa-solid fa-angles-right"></i>
+                Blog
+            </div>
+        </div>
+
+    </div>
+
+    <!-- quick links -->
+    <div class="links3">                    
+        <div class="whatWeOfferHEADING">What We Offer</div>
+        <div class="link3Links">
+            <div class="linkPart1">
+                <div class="LquickLink">
+                    <i class="fa-solid fa-angles-right"></i>
+                    Web Applications
+                </div>
+                <div class="LquickLink">
+                    <i class="fa-solid fa-angles-right"></i>
+                    Data Analytics
+                </div>
+                <div class="LquickLink">
+                    <i class="fa-solid fa-angles-right"></i>
+                    Digital Marketing
+                </div>
+                <div class="LquickLink">
+                    <i class="fa-solid fa-angles-right"></i>
+                    SEO, SEM
+                </div>
+                <div class="LquickLink">
+                    <i class="fa-solid fa-angles-right"></i>
+                    Andriod/IOS Applications
+                </div>
+                <div class="LquickLink">
+                    <i class="fa-solid fa-angles-right"></i>
+                    Machine Learning & IoT based products
+                </div>
+            </div>
+            <div class="linkPart2">
+                <div class="RquickLink">
+                    <i class="fa-solid fa-angles-right"></i>
+                    Training Services
+                </div>
+                <div class="RquickLink">
+                    <i class="fa-solid fa-angles-right"></i>
+                    Competative Programming
+                </div>
+                <div class="RquickLink">
+                    <i class="fa-solid fa-angles-right"></i>
+                    Machine Learning & Deep Learning
+                </div>
+                <div class="RquickLink">
+                    <i class="fa-solid fa-angles-right"></i>
+                    BigData Tools
+                </div>
+                <div class="RquickLink">
+                    <i class="fa-solid fa-angles-right"></i>
+                    Cloud Computing (AWS)
+                </div>
+                <div class="RquickLink">
+                    <i class="fa-solid fa-angles-right"></i>
+                    Python-Django
+                </div>
+                <div class="RquickLink">
+                    <i class="fa-solid fa-angles-right"></i>
+                    App Development with Flutter
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- link - 4 -->
+    <div class="links4">
+        <div class="addressHEADING">Address</div>
+        <div class="addressLinks">
+            <div class="locationADD">
+                <i class="add fa-solid fa-location-dot"></i>
+                B-35, 2nd floor next to vasundhara colony, Gopalpura Bypass, Jaipur
+            </div>
+            <div class="phoneADD">
+                <i class="add fa-solid fa-phone"></i>
+                +91-9602880219, <br>
+                +91-78520716531
+            </div>
+            <div class="emailADD">
+                <i class="add fa-regular fa-envelope"></i>
+                info@regexsoftware.com
+            </div>
+        </div>
+    </div>
+  </div>
+</body>
+</html>
