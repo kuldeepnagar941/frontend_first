@@ -1,5 +1,7 @@
 import { useState } from 'react';
-import './Createclass.css';  
+import './Createclass.css';
+import axios from 'axios';  
+import { useNavigate } from "react-router-dom";
 
 const Createclass = () => {
 
@@ -11,7 +13,9 @@ const Createclass = () => {
     const[weekoff,setWeekOff] = useState('')
     const[numberofseat,setNumberOfSeat] = useState('')
 
-    const handleSubmit =(e) => {
+    const naviagete = useNavigate()
+
+    const handleSubmit = async(e) => {
         e.preventDefault()
         //console.log(batchName,time,duration,subject,fee,weekoff,numberofseat)
         const data ={
@@ -23,8 +27,24 @@ const Createclass = () => {
             weekoff:weekoff,
             numberofseat:numberofseat
         }
+        const token = localStorage.getItem('token');
         console.log(data)
-    }
+        const response = await axios.post("http://localhost:3000/class/", data,{headers:{'Authorization': `Bearer ${token}`}});      
+        console.log("Response: ", response);
+        if(response.status === 201){
+          alert("data Saved Succesfully")
+          naviagete("/classlist")
+          
+        }
+        
+    //     else if(response.status === 400){
+    //       alert("All fields are required")
+    //     }else if(response.status === 500){
+    //       alert("internal server error")
+    //     }
+
+
+     }
 
 
   return (

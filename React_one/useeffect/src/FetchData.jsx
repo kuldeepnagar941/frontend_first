@@ -11,6 +11,10 @@ const FetchData = () => {
     const [loading, setLoading] = useState(true)
     const [search,setSearch] = useState(" ")
     const [sort,setSort] = useState("")
+    const [view, setView] = useState()
+    const [modelView, setModelView] = useState(false)
+
+
 
     useEffect(()=>{
         fetch();
@@ -40,6 +44,23 @@ const FetchData = () => {
         }
         return filterData;
     }
+    const singleData = async(id) =>{
+        console.log(`>>>>>>>>>id>>>>>>`,id);
+        const response = await axios.get(`https://fakestoreapi.com/products/${id}`)
+            setView(response.data)
+            console.log(`>>>>single>>>`,response.data);
+            setView(response.data)
+            setModelView(true)
+        
+
+            
+          }
+
+          const modelCLose = () => {
+            setModelView(false)
+          }
+              
+        
     
 
   return (
@@ -64,13 +85,60 @@ const FetchData = () => {
                 <LazyLoadImage src={item.image} effect="blur" style={{height:"150px",widows:"250px"}} 
                     onLoad={()=> console.log(`my title ${item.title}`)}
                 />
+                <button onClick={()=>singleData(item.id)}>view deatails</button>
             </div>
         ))}
         </div>
     ) }
-        
+    <div>
+    {modelView && view && (
+        <div style={modalStyles.overlay}>
+        <div style={modalStyles.modal}>
+        <h2>Tille :-{view.title}</h2>
+              <h2> Description:-{view.description}</h2>
+              <h2> Price:-{view.price}</h2>
+              <h2> Count :-{view.rating.count}</h2>
+              <h2> Count :-{view.category}</h2>
+              <LazyLoadImage
+                src={view.image}
+                effect='blur'
+              />
+              <button onClick={modelCLose}>Close</button>
+        </div>
+        </div>
+      )}
+
+    </div>
+  
+
+
+
+
+
     </>
-  )
+   )
 }
+const modalStyles = {
+    overlay: {
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      backgroundColor: 'rgba(0, 0, 0, 0.5)',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      zIndex: 100,
+    },
+    modal: {
+      backgroundColor: '#fff',
+      padding: '20px',
+      borderRadius: '5px',
+      boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+      width: '400px',
+    },
+  };
+  
 
 export default FetchData

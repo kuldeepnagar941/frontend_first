@@ -1,5 +1,7 @@
-import  { useState } from 'react';
-import './Createstudent.css'; 
+import  { useState ,useEffect} from 'react';
+import './Createstudent.css';
+import axios from 'axios'; 
+import { useNavigate } from "react-router-dom";
 
 const CreateStudent = () => {
     // Separate useState hooks for each field
@@ -11,12 +13,16 @@ const CreateStudent = () => {
     const [fee, setFee] = useState('');
     const [gender, setGender] = useState('');
     const [rollNo, setRollNo] = useState('');
-    const [batchName, setBatchName] = useState('');
+   // const [batchName, setBatchName] = useState('');
     const [joinDate, setJoinDate] = useState('');
+    const [classes,setClasses] = useState([])
+    const [selectedbatch,setSelectedbatch] = useState('')
 
-    const handleSubmit = (e) => {
+    const navigate = useNavigate()
+
+    const handleSubmit = async(e) => {
         e.preventDefault();
-        console.log(name,email,phone,address,qualification,fee,gender,rollNo,batchName,joinDate,)
+        console.log(name,email,phone,address,qualification,fee,gender,rollNo,selectedbatch,joinDate,)
         const data = {
             name:name,
             email:email,
@@ -26,12 +32,33 @@ const CreateStudent = () => {
             fee:fee,
             gender:gender,
             rollNo:rollNo,
-            batchName:batchName,
+            batchName:selectedbatch,
             joinDate:joinDate,
         };
         console.log(data);
-        // Additional logic for submitting the data
+        const token = localStorage.getItem('token');
+        const response = await axios.post("http://localhost:3000/student/", data,{headers:{'Authorization': `Bearer ${token}`}});
+        console.log("Response: ", response);
+        if(response.status === 201){
+          alert("data Saved Succesfully")
+          navigate("/studentlist")
+        }
+        
     };
+
+    useEffect(() => {
+        fetch();
+      }, []);
+
+    const fetch = async() =>{
+        const token = localStorage.getItem('token');
+        const response = await axios.get("http://localhost:3000/class/",{headers:{'Authorization': `Bearer ${token}`}})
+        console.log(response)
+        setClasses(response.data)
+    }
+    const handleBatchselect = (e)=>{
+        setSelectedbatch(e.target.value)
+    }
 
     return (
         <div className="form-container">
@@ -111,12 +138,14 @@ const CreateStudent = () => {
                 </div>
                 <div className="form-group">
                     <label>Batch Name:</label>
-                    <input
-                        type="text"
-                        value={batchName}
-                        onChange={(e) => setBatchName(e.target.value)}
-                        required
-                    />
+                    <select onChange={handleBatchselect} value={selectedbatch}>
+                    <option value="" >select batch</option>
+                    {
+                        classes.map((item)=>(
+                            <option key={item.id} value={item._id}> {item.batchName}</option>
+                        ))
+                    }
+                   </select>
                 </div>
                 <div className="form-group">
                     <label>Join Date:</label>

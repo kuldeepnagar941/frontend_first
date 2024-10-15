@@ -21,6 +21,7 @@ const Signup = () => {
       console.log("Response: ", response);
       if(response.status === 201){
         alert("data Saved Succesfully")
+        navigate("/")
       }else if(response.status === 400){
         alert("All fields are required")
       }else if(response.status === 500){
@@ -30,7 +31,7 @@ const Signup = () => {
   };
 
   const handleLogin = () => {
-    navigate("/login");
+    navigate("/");
   };
 
   return (
@@ -88,7 +89,7 @@ const Signup = () => {
                 checked={role === "student"}
                 onChange={() => setRole("student")}
               />
-              Student
+             Student
             </label>
             <label>
               <input

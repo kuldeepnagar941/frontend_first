@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+//import Sidebar from './Sidebar';
 
 const LoginPage = () => {
   const navigate = useNavigate()
@@ -10,23 +10,45 @@ const LoginPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const data =(email,password)
-    console.log('Login:', data);
+    const data = {email, password};
+    console.log(`Login:`, data);
 
-    const response = await axios.post(" ",data)
-    console.log(`>>>>res>>>`,response);
+    const response = await axios.post('http://localhost:3000/user/login', data);
+    console.log("Response", response);
+    console.log(response.data.token)
+    localStorage.setItem('token', response.data.token);
+
+    //localStorage.setItem('loginname', response.data.existingUser.name);
+    //console.log("login_user_name")
+     
+      
+    
     if(response.status === 200){
-    alert("login succesfully")
-  };
+     navigate("/sidebar")
+      alert("login succesfully")
+    }
+
+
+
+    //  if(response.data.User.role==="student"){
+    //   navigate("/studentlist")
+    //  }
+    //  if(response.data.User.role==="teacher"){
+    //     navigate("/teacherlist")
+    //  }
+    //  if(response.data.User.role === "admin"){
+    //   navigate("/dashboard")
+    //  }
+
+
+  }
+  
 
   const handleSignUp = () => {
     console.log('Redirect to sign up page');
     navigate("/signup")
-    
+
   };
-
-
-
 
   return (
     <div style={styles.container}>
@@ -65,7 +87,7 @@ const LoginPage = () => {
     </div>
   );
 };
-}
+
 
 const styles = {
   container: {
